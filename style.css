@@ -1,0 +1,56 @@
+body{
+    display:grid;
+    place-items:center;
+    height:100vh;
+}
+.main-grid-row{
+    margin-bottom:10px;
+}
+.center{
+    align-self: center;
+    padding:20px;
+    background-color: rgb(217, 224, 224);
+    border-radius:10px;
+}
+.btn{
+    margin-right:2px;
+    margin-left:2px;
+    overflow:hidden;
+}
+.btn:hover{
+    animation: zoom 500ms ease-in; 
+}
+@keyframes zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+}
+
+.zoom-animation {
+  animation: zoom 500ms ease-in;
+}
+.form-control{
+    margin-bottom:15px;
+    margin-left:2px;
+    margin-right:2px;
+    background-color: aliceblue;
+}
+@keyframes pulse{
+    from, to {
+        scale : 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+}
+/* @keyframes zoom{
+    from {
+        scale:1;
+    }
+    to{
+        scale : 0.81;
+    }
+} */
