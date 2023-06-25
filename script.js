@@ -20,6 +20,13 @@ function calculate(){
         }
     }
 }
+function addLog(msg){
+    var ul=document.getElementById("log")
+    var li=document.createElement("li")
+    var msg_text_node = document.createTextNode(msg)
+    li.appendChild(msg_text_node)
+    ul.appendChild(li)
+}
 function input_number(x){
     expression=document.getElementById("expression").value;
     expression=expression + x;
@@ -34,17 +41,35 @@ function clearExpression() {
     document.getElementById("expression").value = "";
 }
 
-var btn=document.getElementById("btn1")
-console.log(btn);
-console.log(document.getElementsByClassName("btn").length);
-for (var i = 0; i < 18; i++) {
-    console.log("hello");
-    // Add event listener for button click
-    btn[i].addEventListener("click", function() {
-      btn[i].classList.add("zoom-animation");
-      console.log("helo");
-    });
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // console.log(document.getElementsByClassName("btn"));
+    var buttons=document.getElementsByClassName("btn");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function() {
+            this.classList.add("zoom-animation");
+        });
+    }
+    var trailer=document.getElementById("trailer");
+    // window.onmousemove=e=>{
+    //     const x=e.clientX-trailer.offsetWidth/2;
+    //     y=e.clientY-trailer.offsetHeight/2;
+    //     document.getElementById("trailer").style.transform=`translate(${x}px,${y}px)`;
+    //     document.getElementById("trailer-background").style.transform=`translate(${x}px,${y}px)`;
+    // }
+    document.body.onpointermove=event=>{
+        const{clientX,clientY}=event;
+        trailer.animate({
+            left:` ${clientX}px`,
+            top:`${clientY}px`
+        },{duration:800,fill:"forwards"});
+        // trailer_background.animate({
+        //     left:` ${clientX}px`,
+        //     top:`${clientY}px`
+        // },{duration:700,fill:"forwards"});
+
+    }
+
+});
 
 // $(".btn").click(function(event){
 //     btn[i].classList.add("zoom-animation");
