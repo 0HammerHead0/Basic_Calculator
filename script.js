@@ -16,7 +16,7 @@ function calculate(){
         }
         catch(e){
             console.log("exception occurred")
-            addLog(expression + "is bad. please fix it")
+            addLog(expression + " is bad. please fix it")
         }
     }
 }
@@ -51,22 +51,29 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     var trailer=document.getElementById("trailer");
     // window.onmousemove=e=>{
-    //     const x=e.clientX-trailer.offsetWidth/2;
+    //     x=e.clientX-trailer.offsetWidth/2;
     //     y=e.clientY-trailer.offsetHeight/2;
+    //     console.log(x,y);
+    //         const keyframes = {
+    //             transform :`translate(${x}px,${y}px)`
+    //         }
+    //         trailer.animate(keyframes , {
+    //             duration : 800 ,
+    //             fill: "forwards"
+    //         });
     //     document.getElementById("trailer").style.transform=`translate(${x}px,${y}px)`;
     //     document.getElementById("trailer-background").style.transform=`translate(${x}px,${y}px)`;
     // }
-    document.body.onpointermove=event=>{
+    document.body.onmousemove=event=>{
         const{clientX,clientY}=event;
         trailer.animate({
-            left:` ${clientX}px`,
-            top:`${clientY}px`
+            left:`${clientX - 25}px`,
+            top:`${clientY - 25}px`
         },{duration:800,fill:"forwards"});
         // trailer_background.animate({
         //     left:` ${clientX}px`,
         //     top:`${clientY}px`
         // },{duration:700,fill:"forwards"});
-
     }
 
 });

@@ -9,10 +9,11 @@ body{
     width:50px;
     /* background-color:rgb(184, 232, 232);
      */
-    background: linear-gradient(#b3ebe0, #eca1dc);
+    background: linear-gradient(#91d4c6, #f7a2e5);
     animation:rotate 10s infinite;
     border-radius:50px;
-    position:fixed;filter:blur(15px);
+    position:fixed;
+    filter:blur(15px);
     left:0px;
     top:0px;
     z-index:99;
@@ -28,7 +29,7 @@ body{
         scale: 1 1.3;
     }
     50%{
-        scale:0.8 1;
+        scale:1.15 1.15;
     }
     75%{
         scale:1.3 1;
@@ -41,9 +42,9 @@ body:hover > #trailer{
     opacity:1;
     scale:1;
 }
-body:hover{
+/* body:hover{
     cursor:none;
-}
+} */
 .btn:hover > #trailer{
     opacity:0.1;
     transform: scale(0.8);
@@ -58,7 +59,7 @@ body:hover > .center{
     position:fixed;
     z-index:1000;
     padding:20px;
-    background-color: rgb(217, 224, 224);
+    background-color: rgb(198, 214, 214);
     border-radius:10px;
 }
 .btn{
@@ -97,7 +98,6 @@ body:hover > .center{
         scale:0.8
     }
 }
-@
 .zoom-animation {
   animation: zoom 100ms ease-out;
 }
